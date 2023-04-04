@@ -5,6 +5,7 @@ const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon");
 const favoriteBtn = document.querySelector(".favorite button")
+const favoritesList = document.getElementById("favorite-list");
 
 async function weather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -37,12 +38,35 @@ async function weather(city) {
             weatherIcon.src = "images/clear-sky.png";
             break;
     }
+
+    favoriteBtn.addEventListener("click", ()=> {
+        const cityAlreadyInList = [...favoritesList.children].some(child => child.textContent === data.name);
+        if(!cityAlreadyInList) {
+            const listItem = document.createElement("li");
+            listItem.textContent = data.name;
+            favoritesList.appendChild(listItem);
+        }
+    });
 }
 
 searchBtn.addEventListener("click", ()=>{
     weather(searchBox.value);
 })
 
-favoriteBtn.addEventListener("click", ()=> {
-    console.log("test");
-});
+let favorites = [];
+
+function addToFavorites(cityName) {
+    favorites.push(cityName);
+    updateFavoritesList();
+}
+
+function updateFavoritesList() {
+    favoritesList.innerHTML = "";
+    for(let i = 0 ; i < favorites.length; i++) {
+        const listItem = document.createElement("li");
+        listItem.textContent = favorites[i];
+        favoritesList.appendChild(listItem);
+    }
+}
+
+
