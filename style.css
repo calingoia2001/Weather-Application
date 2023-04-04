@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #141414;
+    font-family: 'Arvo'
+}
+
+header {
+    background-color: #4286f4;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+.search input {
+    border: 0;
+    padding: 20px 35px;
+    border-radius: 30px;
+    font-size: 15px;
+}
+
+.search button {
+    border: 0;
+    outline: 0;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.weather-icon {
+    width: 50px;
+    height: 50px;
+}
