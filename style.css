@@ -68,6 +68,26 @@ header {
     font-size: 30px;
 }
 
+.weatherInfo button {
+    border: 0;
+    outline: 0;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.weatherInfo button img {
+    width: 40px;
+}
+
+.favorite {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .details {
     display: flex;
     padding: 30px 230px;
