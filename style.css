@@ -19,8 +19,8 @@ header {
 }
 
 .search {
-    display: flex;
-    align-items: center;
+    margin-top: 10px;
+    text-align: center;
 }
 .search input {
     border: 0;
@@ -36,9 +36,62 @@ header {
     width: 60px;
     height: 60px;
     cursor: pointer;
+    vertical-align: middle;
 }
 
+.search button img {
+    width: 40px;
+}
+
+.weatherInfo {
+    width: 90%;
+    max-width: 550px;
+    margin: 40px auto 0;
+    padding: 60px 120px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    border-radius: 20px;
+    text-align: center;
+}
+
+
 .weather-icon {
-    width: 50px;
-    height: 50px;
+    width: 140px;
+    height: 140px;
+    margin-top: -40px;
+}
+
+.weatherInfo h1 {
+    font-size: 60px;
+}
+
+.weatherInfo h2 {
+    font-size: 30px;
+}
+
+.details {
+    display: flex;
+    padding: 30px 230px;
+    margin-top: 50px;
+    margin-left: -70px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detail {
+    display: flex;
+    margin: 10px;
+}
+
+.humidity, .wind, .pressure {
+    font-size: 20px;
+    margin-top: -10px;
+    margin: 0;
+}
+
+.details-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    margin-top: 10px;
 }
