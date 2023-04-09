@@ -82,12 +82,6 @@ header {
     width: 40px;
 }
 
-.favorite {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .details {
     display: flex;
     padding: 30px 230px;
