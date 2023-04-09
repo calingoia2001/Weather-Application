@@ -6,7 +6,7 @@
     padding: 0;
 }
 body {
-    background: #141414;
+    background: #2b5eb0;
     font-family: 'Arvo'
 }
 
@@ -32,56 +32,56 @@ header {
 }
 
 .search button {
+    cursor: pointer;
+    margin-left: 7px;
     border: 0;
     outline: 0;
-    border-radius: 40px;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    vertical-align: middle;
+    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.search button:hover {
+    background-color: #2b5eb0;
+    box-shadow: 0 0 10px #0c0c0c;
+    transform: scale(1.15);
 }
 
 .search button img {
-    width: 40px;
+    width: 30px;
 }
 
 .weatherInfo {
     width: 90%;
     max-width: 550px;
-    margin: 40px auto 0;
-    padding: 60px 120px;
-    background: linear-gradient(100deg, #00feba, #281e6e);
-    border-radius: 20px;
+    margin: 0 auto;
+    padding: 50px;
+    background-image: linear-gradient(to bottom, #5580c1, #7ea6e0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
     text-align: center;
+    color: #fff;
 }
 
 
 #weatherIcon {
-    width: 140px;
-    height: 140px;
-    margin-top: -40px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
 }
 
 .weatherInfo h1 {
     font-size: 60px;
+    margin: 0;
+    text-shadow: 1px 1px #4e4949;
 }
 
-.weatherInfo h2 {
-    font-size: 30px;
-}
-
-.weatherInfo button {
-    border: 0;
-    outline: 0;
-    border-radius: 50px;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    vertical-align: middle;
-}
-
-.weatherInfo button img {
-    width: 40px;
+.weatherInfo h3 {
+    opacity: 0.7;
+    margin: 0;
+    color: #6a5acd;
+    text-shadow: 1px 1px #555;
 }
 
 .details {
