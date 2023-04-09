@@ -5,13 +5,13 @@ const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector("#weatherIcon");
 
 async function weather(cityName) {
+    document.querySelector(".details").style.display = "flex";
     const response = await fetch(`${apiUrl}${cityName}&appid=${apiKey}`);
     var data = await response.json();
-    console.log(data);
-
+    
     switch (data.weather[0].main) {
         case "Clouds":
-            weatherIcon.src = "images/cloudy.png";
+            weatherIcon.src = "images/clouds.png";
             break;
         case "Clear":
             weatherIcon.src = "images/clear-sky.png";
@@ -33,9 +33,9 @@ async function weather(cityName) {
     document.querySelector(".city").innerHTML = data.name;
     document.querySelector(".temperature").innerHTML = Math.round(data.main.temp) + "°C";
     document.querySelector(".country").innerHTML = data.sys.country;
-    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-    document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-    document.querySelector(".pressure").innerHTML = data.main.pressure;
+    document.querySelector("#humidity").innerHTML = data.main.humidity + "%";
+    document.querySelector("#wind").innerHTML = data.wind.speed + " km/h";
+    document.querySelector("#pressure").innerHTML = data.main.pressure;
 }
 
 searchBtn.addEventListener("click", ()=>{

@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <h1>Weather App</h1>
         <div class="search">
@@ -16,38 +15,32 @@
             <button><img src="images/search.png"></button>
         </div>
     </header>
-
     <main>
         <section>
             <div class="weatherInfo">
-
                 <img src="images/clear-sky.png" id="weatherIcon">
                 <h1 class="temperature"></h1>
                 <h1 class="city"></h1> 
                 <h3 class="country"></h3>
-
                 <div class="details">
                     <div class="detail">
                         <img src="images/humidity.png" class="details-icon">
                         <div>
-                            <p class="humidity"></p>
+                            <p id="humidity"></p>
                             <p>Humidity</p>
                         </div>
-                        
                     </div>
-
                     <div class="detail">
                         <img src="images/wind.png" class="details-icon">
                         <div>
-                            <p class="wind"></p>
+                            <p id="wind"></p>
                             <p>Wind Speed</p>
                         </div>
                     </div>
-
                     <div class="detail">
                         <img src="images/atmospheric.png" class="details-icon">
                         <div>
-                            <p class="pressure"></p>
+                            <p id="pressure"></p>
                             <p>Pressure</p>
                         </div>
                     </div>
@@ -55,12 +48,9 @@
             </div>
         </section>
     </main>
-
     <footer>
         <p>&copy; 2023 Weather Application</p>
       </footer>
-
     <script src="script.js"></script>
-
 </body>
 </html>
