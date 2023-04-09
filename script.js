@@ -1,22 +1,13 @@
-console.log("test");
 const apiKey = "c8853f099bc8a6740c33132d97e0f47f";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
-const weatherIcon = document.querySelector(".weather-icon");
-const favoriteBtn = document.querySelector(".favorite button")
-const favoritesList = document.getElementById("favorite-list");
+const weatherIcon = document.querySelector("#weatherIcon");
 
-async function weather(city) {
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+async function weather(cityName) {
+    const response = await fetch(`${apiUrl}${cityName}&appid=${apiKey}`);
     var data = await response.json();
     console.log(data);
-    document.querySelector(".city").innerHTML = data.name;
-    document.querySelector(".temperature").innerHTML = Math.round(data.main.temp) + "°C";
-    document.querySelector(".country").innerHTML = data.sys.country;
-    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-    document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-    document.querySelector(".pressure").innerHTML = data.main.pressure;
 
     switch (data.weather[0].main) {
         case "Clouds":
@@ -38,6 +29,13 @@ async function weather(city) {
             weatherIcon.src = "images/clear-sky.png";
             break;
     }
+
+    document.querySelector(".city").innerHTML = data.name;
+    document.querySelector(".temperature").innerHTML = Math.round(data.main.temp) + "°C";
+    document.querySelector(".country").innerHTML = data.sys.country;
+    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+    document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+    document.querySelector(".pressure").innerHTML = data.main.pressure;
 }
 
 searchBtn.addEventListener("click", ()=>{
