@@ -38,35 +38,11 @@ async function weather(city) {
             weatherIcon.src = "images/clear-sky.png";
             break;
     }
-
-    favoriteBtn.addEventListener("click", ()=> {
-        const cityAlreadyInList = [...favoritesList.children].some(child => child.textContent === data.name);
-        if(!cityAlreadyInList) {
-            const listItem = document.createElement("li");
-            listItem.textContent = data.name;
-            favoritesList.appendChild(listItem);
-        }
-    });
 }
 
 searchBtn.addEventListener("click", ()=>{
     weather(searchBox.value);
 })
 
-let favorites = [];
-
-function addToFavorites(cityName) {
-    favorites.push(cityName);
-    updateFavoritesList();
-}
-
-function updateFavoritesList() {
-    favoritesList.innerHTML = "";
-    for(let i = 0 ; i < favorites.length; i++) {
-        const listItem = document.createElement("li");
-        listItem.textContent = favorites[i];
-        favoritesList.appendChild(listItem);
-    }
-}
 
 
